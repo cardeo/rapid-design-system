@@ -54,7 +54,7 @@ The original long-form methodology document is preserved in [rapid-design-system
 
 # Author
 
-SWARM was developed by Matt Lambert.
+Rapid Design System + SWARM are developed by Matt Lambert.
 
 
 # Links
