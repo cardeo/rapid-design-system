@@ -2,9 +2,21 @@
 
 This file explains how an AI coding or design agent should apply Rapid Design System.
 
-It is not a prompt pack. It is an operating manual for AI tools working on a design system, UI framework, product frontend, documentation environment, or component library.
+It is not a prompt pack. It is a lightweight entry point for AI tools working on a design system, UI framework, product frontend, documentation environment, or component library.
 
 An agent using RDS should help the team make proportionate governance decisions. The goal is not to generate the most system surface area. The goal is to reduce UI drift while protecting product velocity.
+
+## Relationship to RDS Skills
+
+RDS is the methodology/system.
+
+The reusable skills in [skills](skills) are portable agent capabilities built from that methodology.
+
+When an agent environment supports skills, use [rds-orchestrator](skills/rds-orchestrator/SKILL.md) as the entry point for general RDS work. The orchestrator interprets user intent, routes to specialist skills, and returns an RDS-informed decision or recommendation.
+
+Specialist skills, such as [rds-readiness-audit](skills/rds-readiness-audit/SKILL.md) and [rds-component-classifier](skills/rds-component-classifier/SKILL.md), contain bounded procedures. This file should not compete with those procedures.
+
+When an agent environment does not support skills, use this file with [README.md](README.md), [rapid-design-system.md](rapid-design-system.md), and the relevant [sections](sections) as the fallback operating guidance.
 
 ## Core Rules
 
@@ -33,6 +45,15 @@ An AI agent may recommend a custom component but should not create one automatic
 Do not treat every requested component as a design-system component. Some concerns should be tokens. Some should be theme overrides. Some should be runtime examples. Some should stay product-specific. Some should be deferred.
 
 ## Default Agent Workflow
+
+When the RDS skill system is available:
+
+1. Read [README.md](README.md).
+2. Invoke or follow [rds-orchestrator](skills/rds-orchestrator/SKILL.md).
+3. Let the orchestrator route to specialist skills.
+4. Return the resulting RDS decision, recommendation, question, or approval request.
+
+When the RDS skill system is not available:
 
 1. Read [README.md](README.md).
 2. Read the relevant section files.
