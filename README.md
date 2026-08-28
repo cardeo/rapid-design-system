@@ -64,12 +64,6 @@ Working on a UI decision? Give your agent the relevant context and say:
 RDS this. Should this pattern become part of the design system?
 ```
 
-You should not need to manually invoke:
-
-```text
-rds-readiness-audit -> rds-component-classifier -> rds-token-theme-advisor
-```
-
 Users ask design-system questions. RDS determines which parts of the methodology need to answer them.
 
 Example questions:
